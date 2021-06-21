@@ -13,7 +13,7 @@ class Post(models.Model):
 
 class Comment(models.Model):
     post = models.ForeignKey(Post, null=True,
-                             on_delete=models.CASCADE)
+                             on_delete=models.SET_NULL, related_name='comments')
     text = models.TextField()
 
 
